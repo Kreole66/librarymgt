@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+</head>
+<body>
+    <h1>Bookshelf</h1>
+    <ul>
+        {% for book in books %}
+            <li>
+                <strong>Title:</strong> {{ book.title }}<br>
+                <strong>Author:</strong> {{ book.author }}<br>
+                <strong>ISBN:</strong> {{ book.isbn }}<br>
+                <strong>Summary:</strong> {{ book.summary }}<br>
+                <strong>Genre:</strong> {{ book.genre }}<br>
+                <strong>Publish Date:</strong> {{ book.publish_date }}
+            </li>
+        {% empty %}
+            <p>Your bookshelf is empty.</p>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'add_book' %}">Add a Book</a>
+</body>
+</html>
